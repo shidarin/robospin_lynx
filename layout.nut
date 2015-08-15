@@ -1,13 +1,11 @@
 //
-// Attract-Mode Front-End - "Robospin" layout
+// Attract-Mode Front-End - "Robospin Lynx" layout
 //
 class UserConfig {
    </ label="SpinWheel", help="The artwork to spin", options="marquee,flyer,wheel" />
    orbit_art="wheel";
    </ label="Bloom Effect", help="Enable Bloom Effect (requires shader support)", options="Yes,No" />
    enable_bloom="Yes";
-   </ label="Display Flyer", help="Display the flyer/game box in background.", options="Yes,No" /> enable_flyer="No";
-   </ label="BlackBG", help="Change color of background.", options="Yes,No" /> enable_BlackBG="No";
    </ label="Mask", help="Make background darker.", options="Yes,No" /> enable_Mask="Yes";
    </ label="Transition Time", help="Time in milliseconds for wheel spin." /> transition_ms="25";
 }
@@ -25,8 +23,8 @@ else
    yes_shader = no_shader;
 }
 
-fe.layout.width=1360;
-fe.layout.height=768;
+fe.layout.width=1920;
+fe.layout.height=1080;
 local flx = fe.layout.width;
 local fly = fe.layout.height;
 local flw = fe.layout.width;
@@ -43,76 +41,35 @@ local mask = fe.add_image( "mask.png", 0, 0, flw, flx );
 
 }
 
-
-if ( my_config["enable_BlackBG"] == "Yes" )
-
-{
-
-local yes_BlackBG = fe.add_image( "bkg1.png" 0, 0, flw, flh);
-
-}
-
-
-
-// Flyer 
-if ( my_config["enable_flyer"] == "Yes") 
-
-{
- local flyer = fe.add_artwork( "flyer", 0, 0, flw, flh);
- flyer.preserve_aspect_ratio = false;
-}
-
 // Image shadow/outline thickness
 local offset = 4;
 
-
-//Image of robotron cab with green templates for positioning artwork
-//fe.add_image( "robo-green.png", 0, 0, flw, flh );
-
-//marquee 
-local marquee = fe.add_artwork( "marquee", flx*0.080, fly*0.075, flw*0.2625, flh*0.143 );
-marquee.skew_x = 15;
-marquee.pinch_y = 4.2;
-marquee.rotation = -1.9;
-marquee.subimg_width=-marquee.texture_width;
-marquee.preserve_aspect_ratio = false;
+//Image of lynx overlay guide with green for help positioning the artwork
+//fe.add_image( "overlay_guide.png", 0, 0, flw, flh );
 
 
 //video
-local snap = fe.add_artwork( "snap", flx*0.067, fly*0.364, flw*0.175, flh*0.273 );
-snap.pinch_y = 12;
-snap.skew_x = 10;
-snap.rotation = -5.6;
+local snap = fe.add_artwork( "snap", flx*0.049, fly*0.217, 160*4.1, 102*3.74 );
+snap.pinch_x = -10;
+snap.pinch_y = 13;
+snap.skew_x = 110;
+snap.skew_y = 15;
+snap.rotation = -12.6;
 snap.preserve_aspect_ratio = false;
+//helps with placement
+//snap.alpha = 200;
 
-//Image of robotron cab
-fe.add_image( "robo.png", 0, 0, flw, flh );
+//scanlines
+local scanlines = fe.add_image( "scan-lights.png", snap.x, snap.y, snap.width, snap.height );
+scanlines.pinch_x = snap.pinch_x;
+scanlines.pinch_y = snap.pinch_y;
+scanlines.skew_x = snap.skew_x;
+scanlines.skew_y = snap.skew_y;
+scanlines.rotation = snap.rotation;
+scanlines.preserve_aspect_ratio = false;
 
-//Pointer
-local frame = fe.add_image( "point.png", flx*0.90, fly*0.42, flw*0.10, flh*0.17 );
-
-
-//frame to make text standout on cab
-local frame = fe.add_image( "frame.png", flx*0.02, fly*0.86, flw*0.59, flh*0.13 );
-//frame.rotation = -9;
-//frame.skew_x = -10;
-
-
-//text 
-local title = fe.add_text( "[Title]", flx*0.03, fly*0.88, flw*0.6, flh*0.03 );
-title.set_rgb( 255, 255, 255 );
-title.align = Align.Left;
-//title.rotation = -8;
-
-local man = fe.add_text( " [Year] [Manufacturer] ", flx*0.025, fly*0.91, flw*0.6, flh*0.03 );
-man.set_rgb( 255, 255, 255 );
-man.align = Align.Left;
-//man.rotation = -8;
-
-local filter = fe.add_text( "[ListFilterName] [ListEntry]/[ListSize]", flx*0.03, fly*0.94, flw*0.3, flh*0.03 );
-filter.set_rgb( 255, 255, 255 );
-filter.align = Align.Left;
-//filter.rotation = -8;
+//Image of lynx overlay
+fe.add_image( "screen_overlay.png", 0, 0, flw, flh );
 
 //wheel settings
 fe.load_module( "conveyor" );
@@ -196,10 +153,7 @@ function fancy_transitions( ttype, var, ttime ) {
   red = 255;
   green = 255;
   blue = 255;
-  filter.set_rgb (red,green,blue);
   //emulator.set_rgb (red,green,blue);
-  man.set_rgb (red,green,blue);
-  title.set_rgb (red,green,blue);
   message.set_rgb (red,green,blue);
   break;
 
