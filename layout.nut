@@ -7,6 +7,7 @@ class UserConfig {
    </ label="Bloom Effect", help="Enable Bloom Effect (requires shader support)", options="Yes,No" />
    enable_bloom="Yes";
    </ label="Mask", help="Make background darker.", options="Yes,No" /> enable_Mask="Yes";
+   </ label="Dusty Screen", help="Integrates screen with dust and grain.", options="Yes,No" /> enable_dust="Yes";
    </ label="Transition Time", help="Time in milliseconds for wheel spin." /> transition_ms="25";
 }
 
@@ -48,6 +49,12 @@ local offset = 4;
 //fe.add_image( "overlay_guide.png", 0, 0, flw, flh );
 
 
+//box art
+local box = fe.add_artwork( "flyer", flx*0.05, fly*0.65, 300, 300 );
+
+//box art
+local box = fe.add_artwork( "cart", flx*0.23, fly*0.72, 150, 150 );
+
 //video
 local snap = fe.add_artwork( "snap", flx*0.049, fly*0.217, 160*4.1, 102*3.74 );
 snap.pinch_x = -10;
@@ -59,17 +66,18 @@ snap.preserve_aspect_ratio = false;
 //helps with placement
 //snap.alpha = 200;
 
-//scanlines
-local scanlines = fe.add_image( "scan-lights.png", snap.x, snap.y, snap.width, snap.height );
-scanlines.pinch_x = snap.pinch_x;
-scanlines.pinch_y = snap.pinch_y;
-scanlines.skew_x = snap.skew_x;
-scanlines.skew_y = snap.skew_y;
-scanlines.rotation = snap.rotation;
-scanlines.preserve_aspect_ratio = false;
+local overlay;
+if ( my_config["enable_dust"] == "Yes" )
+{
+   overlay = "screen_overlay_dusty.png";
+}
+else
+{
+   overlay = "screen_overlay.png";
+}
 
 //Image of lynx overlay
-fe.add_image( "screen_overlay.png", 0, 0, flw, flh );
+fe.add_image( overlay, 0, 0, flw, flh );
 
 //wheel settings
 fe.load_module( "conveyor" );
