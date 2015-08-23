@@ -46,9 +46,11 @@ local mask = fe.add_image( "mask.png", 0, 0, flw, flx );
 
 //box art
 local box = fe.add_artwork( "flyer", flx*0.05, fly*0.65, 300, 300 );
+box.preserve_aspect_ratio = true;
 
-//box art
-local box = fe.add_artwork( "cart", flx*0.23, fly*0.72, 150, 150 );
+//cart art
+local cart = fe.add_artwork( "cart", flx*0.23, fly*0.72, 150, 150 );
+cart.preserve_aspect_ratio = true;
 
 //video
 local snap = fe.add_artwork( "snap", flx*0.049, fly*0.217, 160*4.1, 102*3.74 );
@@ -118,8 +120,11 @@ class WheelEntry extends ConveyorSlot
         m_obj.y = wheel_y[slot] + p * ( wheel_y[slot+1] - wheel_y[slot] );
         m_obj.width = wheel_w[slot] + p * ( wheel_w[slot+1] - wheel_w[slot] );
         m_obj.height = wheel_h[slot] + p * ( wheel_h[slot+1] - wheel_h[slot] );
-        m_obj.rotation = wheel_r[slot] + p * ( wheel_r[slot+1] - wheel_r[slot] );
+        m_obj.rotation = wheel_r[slot] + p * (
+            wheel_r[slot+1] - wheel_r[slot] 
+        );
         m_obj.alpha = wheel_a[slot] + p * ( wheel_a[slot+1] - wheel_a[slot] );
+        m_obj.preserve_aspect_ratio = true;
     }
 };
 
