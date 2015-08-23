@@ -4,6 +4,7 @@
 // Based off the "Robospin" layout by omegaman, verion and raygun
 // http://forum.attractmode.org/index.php?topic=198.0
 // Atari Lynx version by Sean 'shidarin' Wallitsch
+// https://github.com/shidarin/robospin_lynx
 //
 // The MIT License (MIT)
 // 
