@@ -72,11 +72,15 @@ local mask = fe.add_image( "mask.png", 0, 0, flw, flx );
 //fe.add_image( "overlay_guide.png", 0, 0, flw, flh );
 
 //box art
-local box = fe.add_artwork( "flyer", flx*0.05, fly*0.65, 300, 300 );
+local box = fe.add_artwork(
+    "flyer", flx*0.05, fly*0.65, flw*0.15625, flh*0.277
+);
 box.preserve_aspect_ratio = true;
 
 //cart art
-local cart = fe.add_artwork( "cart", flx*0.23, fly*0.72, 150, 150 );
+local cart = fe.add_artwork(
+    "cart", flx*0.23, fly*0.72, flw*0.078125, flh*0.1389
+);
 cart.preserve_aspect_ratio = true;
 
 //video
