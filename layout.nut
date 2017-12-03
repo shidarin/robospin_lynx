@@ -84,12 +84,12 @@ local cart = fe.add_artwork(
 cart.preserve_aspect_ratio = true;
 
 //video
-local snap = fe.add_artwork( "snap", flx*0.049, fly*0.217, 160*4.1, 102*3.74 );
-snap.pinch_x = -10;
-snap.pinch_y = 13;
+local snap = fe.add_artwork( "snap", flx*0.049, fly*0.217, 160*4.1, 102*3.70 );
+snap.pinch_x = -11;
+snap.pinch_y = 8;
 snap.skew_x = 110;
-snap.skew_y = 15;
-snap.rotation = -12.6;
+snap.skew_y = -10;
+snap.rotation = -10.75;
 snap.preserve_aspect_ratio = false;
 //Decrease opacity to help with placement
 //snap.alpha = 200;
@@ -105,7 +105,9 @@ else
 }
 
 //Lynx overlay image
-fe.add_image( overlay, 0, 0, flw, flh );
+local overlay_image = fe.add_image( overlay, 0, 0, flw, flh );
+//Turn off overlay entirely to help with placement
+//overlay_image.alpha = 0;
 
 //Wheel settings
 fe.load_module( "conveyor" );
