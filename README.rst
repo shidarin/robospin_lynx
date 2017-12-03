@@ -6,6 +6,7 @@ Robospin Lynx
 - **Email:** shidarin@alphamatte.com
 - **License:** MIT, CC-BY-NC-SA
 - **Status:** Development
+- **Version:** 1.0
 - **GitHub:** https://github.com/shidarin/robospin_lynx
 
 Introduction
@@ -14,8 +15,9 @@ Introduction
 A robospin fork customized for Atari Lynx games. Classic wheel design showcases
 snaps or videos in the Lynx's screen, as well as showing flyer and cart art.
 
-|Theme Preview|\
-`Fullsize`_
+|Theme Preview|
+
+`Fullsize Image`_
 
 `Original photography`_ for this theme is by `Pete Slater`_. Modifications have
 been made to his original work.
@@ -103,6 +105,6 @@ License
 .. _Original photography: https://www.flickr.com/photos/johnnywashngo/15141709656/
 .. _Pete Slater: https://twitter.com/peteslater
 .. _release page: https://github.com/shidarin/robospin_lynx/releases
-.. _Fullsize: http://i.imgur.com/3r0SPrI.png
+.. _Fullsize Image: http://i.imgur.com/3r0SPrI.png
 
 .. |Theme Preview| image:: http://i.imgur.com/3r0SPrIl.png
