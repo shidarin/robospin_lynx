@@ -15,26 +15,29 @@ Introduction
 A robospin fork customized for Atari Lynx games. Classic wheel design showcases
 snaps or videos in the Lynx's screen, as well as showing flyer and cart art.
 
-|Theme Preview|
+[![Theme Preview](preview.png?raw=true)](preview.png?raw=true)
 
-`Fullsize Image`_
-
-`Original photography`_ for this theme is by `Pete Slater`_. Modifications have
-been made to his original work.
+[Original photography](https://www.flickr.com/photos/johnnywashngo/15141709656/) 
+for this theme is by [Pete Slater](https://twitter.com/peteslater). 
+Retrieved via CC-BY license on August 15th, 2015. Modifications have been made 
+to his original work.
 
 Installation
 ------------
 
 The simplest installation method is through git, from within your attract
-mode layout folder::
+mode layout folder:
 
+``` bash
     git clone https://github.com/shidarin/robospin_lynx.git
+```
 
 This will create a `robospin_lynx` folder inside your layout folder, and 
 you can now select `robospin_lynx` as a theme for a display.
 
-You can also unzip archives from the `release page`_ into a `robospin_lynx`
-folder in your layout folder, and it will do the same thing without git.
+You can also unzip archives from the [release page](https://github.com/shidarin/robospin_lynx/releases) 
+into a `robospin_lynx` folder in your layout folder, and it will do the same
+thing without git.
 
 Usage
 -----
@@ -56,7 +59,13 @@ Options
 Changelog
 ---------
 
-*New in version 0.1:*
+*New in version 1.1:*
+
+Fancy transitions are back.
+README is now in markdown format.
+Added preview.png to preview theme.
+
+*New in version 1.0:*
 
 Initial release.
 
@@ -101,10 +110,3 @@ License
     applies to the images.
     http://creativecommons.org/licenses/by-nc-sa/4.0/
     http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
-
-.. _Original photography: https://www.flickr.com/photos/johnnywashngo/15141709656/
-.. _Pete Slater: https://twitter.com/peteslater
-.. _release page: https://github.com/shidarin/robospin_lynx/releases
-.. _Fullsize Image: http://i.imgur.com/3r0SPrI.png
-
-.. |Theme Preview| image:: http://i.imgur.com/3r0SPrIl.png
