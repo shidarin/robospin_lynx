@@ -4,7 +4,7 @@ Robospin Lynx
 
 - **Author/Maintainer:** Sean Wallitsch
 - **Email:** shidarin@alphamatte.com
-- **License:** MIT, CC-BY-NC-SA
+- **License:** MIT, CC-BY
 - **Status:** Development
 - **Version:** 1.0
 - **GitHub:** https://github.com/shidarin/robospin_lynx
@@ -12,7 +12,8 @@ Robospin Lynx
 Introduction
 ------------
 
-A robospin fork customized for Atari Lynx games. Classic wheel design showcases
+[Attract-Mode](http://attractmode.org/about.html) emulator layout based on the
+classic robospin theme. Customized for Atari Lynx games. Classic wheel design showcases
 snaps or videos in the Lynx's screen, as well as showing flyer and cart art.
 
 [![Theme Preview](preview.png?raw=true)](preview.png?raw=true)
@@ -105,8 +106,8 @@ License
     https://twitter.com/peteslater
     Distributed under a CC-BY License. Modifications have been made.
 
-    Images present in this package are distributed under a CC-BY-NC-SA license
+    Images present in this package are distributed under a CC-BY license
     Note that this is a more restrictive license than the MIT license, and only
     applies to the images.
-    http://creativecommons.org/licenses/by-nc-sa/4.0/
-    http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+    http://creativecommons.org/licenses/by/4.0/
+    http://creativecommons.org/licenses/by/4.0/legalcode
